@@ -269,7 +269,7 @@ int Desensamblador(unsigned char *codigobuffer, int pece){
         break;
 
         case 0x36: 
-        cout<<"MVI M immediate memory"<<endl; 
+        cout<<"MVI M"<<endl; 
         break;
 
         /* Load */
@@ -309,7 +309,6 @@ int Desensamblador(unsigned char *codigobuffer, int pece){
         break;
 
 
-
         /* Store*/
 
         case 0x02: 
@@ -328,73 +327,179 @@ int Desensamblador(unsigned char *codigobuffer, int pece){
         cout<<"SHLD"<<endl; 
         break;
 
-        
 
         /*Stack ops*/
-        case 0xc5
+        case 0xc5:
         cout << "Push B" << endl;
         break;
 
-        case 0xd5
+        case 0xd5:
         cout << "Push D" << endl;
         break;
 
-        case 0xe5
+        case 0xe5:
         cout << "Push H" << endl;
         break;
 
-        case 0xf5
+        case 0xf5:
         cout << "Push  PSW" << endl;
         break;
 
-        case 0xc1
+        case 0xc1:
         cout << "Pop B" << endl;
         break;
 
-        case 0xd1
+        case 0xd1:
         cout << "Pop D" << endl;
         break;
 
-        case 0xe1
+        case 0xe1:
         cout << "Pop H" << endl;
         break;
 
-        case 0xf1
+        case 0xf1:
         cout << "PoP PSW" << endl;
         break;
 
-        case 0xe3
+        case 0xe3:
         cout << "XTHL" << endl;
         break;
 
-        case 0xf9
+        case 0xf9:
         cout << "SPHL" << endl;
         break;
 
-        case 0x31
+        case 0x31:
         cout << "LXI SP" << endl;
         break;
 
-        case 0x33
+        case 0x33:
         cout << "INX SP" << endl;
         break;
 
-        case 0x3b
+        case 0x3b:
         cout << "DCX SP" << endl;
         break;
 
         
 
         /*Jump*/
+        case 0xc3:
+        cout << "JMP" << endl;
+        break;
 
+        case 0xda:
+        cout << "JC" << endl;
+        break;
 
-        /*call*/
+        case 0xd2:
+        cout << "JNC" << endl;
+        break;
 
+        case 0xca:
+        cout << "JZ" << endl;
+        break;
 
-        /*return */
+        case 0xc2:
+        cout << "JNZ" << endl;
+        break;
+
+        case 0xf2:
+        cout << "JP" << endl;
+        break;
+
+        case 0xfa:
+        cout << "JM" << endl;
+        break;
+
+        case 0xea:
+        cout << "JPE" << endl;
+        break;
+
+        case 0xe2:
+        cout << "JPO" << endl;
+        break;
+
+        case 0xe9:
+        cout << "PCHL" << endl;
+        break;
+
+        /*Call*/
+
+        case 0xcd:
+        cout << "CALL" << endl;
+        break;
+
+        case 0xdc:
+        cout << "CC" << endl;
+        break;
+
+        case 0xd4:
+        cout << "CNC" << endl;
+        break;
+
+        case 0xcc:
+        cout << "CZ" << endl;
+        break;
+
+        case 0xc4:
+        cout << "CNZ" << endl;
+        break;
+
+        case 0xf4:
+        cout << "CP" << endl;
+        break;
+
+        case 0xfc:
+        cout << "CM" << endl;
+        break;
+
+        case 0xec:
+        cout << "EC" << endl;
+        break;
+
+        case 0xe4:
+        cout << "CPO" << endl;
+        break;
+
+        /*Return */
+
+        case 0xc9:
+        cout << "RET" << endl;
+        break;
+
+        case 0xd8:
+        cout << "RC" << endl;
+        break;
+
+        case 0xd0:
+        cout << "RNC" << endl;
+        break;
+
+        case 0xc8:
+        cout << "RZ" << endl;
+        break;
+
+        case 0xc0:
+        cout << "RNZ" << endl;
+        break;
+
+        case 0xf0:
+        cout << "RP" << endl;
+        break;
+
+        case 0xf8:
+        cout << "RM" << endl;
+        break;
+
+        case 0xe0:                      //##### ANALIZAR por qué comparten el mismo instruction code 
+        cout << "RPE/RPO" << endl;  
+        break;
 
 
         /*restart */
+
+        
 
         /* increment and decrement */
 
